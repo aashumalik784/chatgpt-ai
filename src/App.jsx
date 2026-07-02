@@ -38,7 +38,7 @@ function App() {
       <div className="container">
         <header className="header">
           <img src="/logo.svg" alt="Logo" width="32" height="32" />
-          <h1>Wasmer GPT</h1>
+          <h1>Aashu Malik GPT © 2026</h1> {/* ✅ Yahan change kiya */}
         </header>
         <div className="chat-box">
           {messages.length === 0 && <div className="empty">Namaste! Kya puchna hai?</div>}
@@ -51,8 +51,8 @@ function App() {
           <div ref={chatEndRef} />
         </div>
         <div className="input-area">
-          <input 
-            value={input} 
+          <input
+            value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => e.key === 'Enter' &&!e.shiftKey && sendMessage()}
             placeholder="Message bhejo..."
