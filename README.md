@@ -76,6 +76,7 @@ cd your-repo-name
 npm install
 GROQ_API_KEY=gsk_your_groq_api_key_here
 npm run dev
+
 ├── api/
 │   └── chat.js          # Groq API handler
 ├── public/
@@ -90,10 +91,11 @@ npm run dev
 npm i -g vercel
 
 vercel
+---
 <div align="center">
   <img src="./aashu-profile.jpg" alt="Aashu Malik" width="120" style="border-radius: 50%; border: 3px solid #007bff;">
   
-
+---
 ## 👨‍💻 About Me
 <div align="center">
   <img src="./aashu-profile.jpg" alt="Aashu Malik" width="150" style="border-radius: 50%;">
