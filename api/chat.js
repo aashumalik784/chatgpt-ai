@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -8,32 +9,41 @@ export default async function handler(req, res) {
 
   try {
     const { message } = req.body;
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GROQ_API_KEY; // ✅ GROQ ki key
 
-    if (!apiKey) return res.status(500).json({ error: 'API key set nahi hai' });
+    if (!apiKey) return res.status(500).json({ error: 'GROQ_API_KEY set nahi hai Vercel me' });
     if (!message) return res.status(400).json({ error: 'Message khali hai' });
 
-    // ✅ FIX: Model ka naam change kiya + v1 use kiya v1beta ki jagah
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-    
-    const geminiResponse = await fetch(url, {
+    // ✅ Groq API call
+    const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: message }] }],
+        model: 'llama-3.1-8b-instant', // Free + Super fast model
+        messages: [
+          { role: 'system', content: 'You are a helpful AI assistant. Reply in Hinglish.' },
+          { role: 'user', content: message }
+        ],
+        temperature: 0.7,
+        max_tokens: 1024,
       }),
     });
 
-    const data = await geminiResponse.json();
-    if (!geminiResponse.ok) {
-      console.error('Gemini Error:', data);
-      return res.status(500).json({ error: data.error?.message || 'Gemini error' });
+    const data = await groqResponse.json();
+    
+    if (!groqResponse.ok) {
+      console.error('Groq Error:', data);
+      return res.status(500).json({ error: data.error?.message || 'Groq API error' });
     }
 
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Reply nahi mila';
+    const reply = data.choices?.[0]?.message?.content || 'Reply nahi mila';
     return res.status(200).json({ reply });
 
   } catch (error) {
+    console.error('Server Error:', error);
     return res.status(500).json({ error: 'Server error: ' + error.message });
   }
 }
