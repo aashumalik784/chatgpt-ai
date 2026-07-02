@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -11,10 +10,9 @@ export default async function handler(req, res) {
     const { message } = req.body;
     const apiKey = process.env.GROQ_API_KEY;
 
-    if (!apiKey) return res.status(500).json({ error: 'GROQ_API_KEY set nahi hai Vercel me' });
+    if (!apiKey) return res.status(500).json({ error: 'GROQ_API_KEY set nahi hai' });
     if (!message) return res.status(400).json({ error: 'Message khali hai' });
 
-    // ✅ Groq API call with system prompt
     const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: { 
@@ -22,16 +20,24 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
+        model: 'llama-3.3-70b-versatile',
         messages: [
           { 
             role: 'system', 
-            content: 'You are Wasmer GPT. Always reply in Hinglish using Hindi + English mix. Be friendly and helpful. If you dont know latest info after April 2024, say "Mera data April 2024 tak ka hai bhai, iske liye latest search karna padega". Today is 2 July 2026.' 
+            content: `You are Aashu Malik GPT, a helpful Indian AI assistant created by Aashu Malik. 
+            Rules:
+            1. Always reply in Hinglish - Hindi + English mix. Natural tone use karo.
+            2. Seedha point pe aao, bakwas mat karo. User ne jo pucha wahi batao.
+            3. Agar code maange to pura working code do with explanation.
+            4. Agar latest info nahi pata after April 2024, to bolo "Bhai ye April 2024 ke baad ka hai, exact nahi pata".
+            5. Friendly raho but professional bhi. "Bhai", "yaar" use kar sakte ho.
+            6. Kabhi mat bolna ki "Main AI model hoon" - Tum Aashu Malik GPT ho.
+            Today is 2 July 2026.` 
           },
           { role: 'user', content: message }
         ],
-        temperature: 0.7,
-        max_tokens: 1024,
+        temperature: 0.8,
+        max_tokens: 2048,
       }),
     });
 
