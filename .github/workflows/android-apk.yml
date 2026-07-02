@@ -25,20 +25,17 @@ jobs:
       - name: Build web app
         run: npm run build
       
-      - name: Init Capacitor
-        run: npx cap init "Wasmer GPT" "io.wasmer.gpt" --web-dir=dist
-      
-      - name: Add Android platform
-        run: npx cap add android
-      
-      - name: Copy web assets
-        run: npx cap copy android
-      
       - name: Setup Java JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+      
+      - name: Add Android platform
+        run: npx cap add android
+      
+      - name: Sync Capacitor
+        run: npx cap sync android
       
       - name: Build APK
         run: cd android && chmod +x ./gradlew && ./gradlew assembleDebug
