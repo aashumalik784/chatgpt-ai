@@ -89,3 +89,13 @@ npm run dev
 └── index.html           # HTML template
 npm i -g vercel
 vercel
+<div align="center">
+  <img src="./aashu-profile.jpg" alt="Aashu Malik" width="150" style="border-radius: 50%;">
+  <h3>Aashu Malik</h3>
+  <p>Full Stack Developer | Content Creator | AI Enthusiast</p>
+</div>
+<div align="center">
+  <img src="./public/images/aashu.jpg" alt="Aashu Malik" width="150" style="border-radius: 50%;">
+  <h3>Aashu Malik</h3>
+  <p>Full Stack Developer | Content Creator | AI Enthusiast</p>
+</div>
