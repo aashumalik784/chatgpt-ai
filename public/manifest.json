@@ -1,11 +1,11 @@
 {
-  "name": "Wasmer GPT",
-  "short_name": "WasmerGPT",
+  "name": "Aashu Malik GPT",
+  "short_name": "AashuGPT",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
-  "description": "ChatGPT clone on Wasmer",
+  "description": "AI Chatbot by Aashu Malik - Powered by Groq",
   "icons": [
     {
       "src": "/logo.svg",
