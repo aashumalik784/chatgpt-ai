@@ -71,10 +71,14 @@
 
 ### 1. Clone Repository
 ```bash
+
 git clone https://github.com/aashumalik784/your-repo-name.git
 cd your-repo-name
+
 npm install
+
 GROQ_API_KEY=gsk_your_groq_api_key_here
+
 npm run dev
 
 ├── api/
@@ -88,9 +92,11 @@ npm run dev
 │   ├── App.jsx          # Main chat UI
 │   └── main.jsx         # Entry point
 └── index.html           # HTML template
+
 npm i -g vercel
 
 vercel
+
 ---
 <div align="center">
   <img src="./aashu-profile.jpg" alt="Aashu Malik" width="120" style="border-radius: 50%; border: 3px solid #007bff;">
