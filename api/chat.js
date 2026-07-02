@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     if (!message) return res.status(400).json({ error: 'Message khali hai' });
 
     // ✅ FIX: Model ka naam change kiya + v1 use kiya v1beta ki jagah
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash-001:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
     
     const geminiResponse = await fetch(url, {
       method: 'POST',
