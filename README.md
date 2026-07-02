@@ -1,26 +1,26 @@
 <div align="center">
-  <img src="/logo.svg" alt="Aashu Malik GPT Logo" width="100" height="100">
+  <img src="./aashu-profile.jpg" alt="Aashu Malik" width="120" style="border-radius: 50%; border: 3px solid #007bff;">
   
   <h1>Aashu Malik GPT © 2026</h1>
   <p><strong>AI Chatbot built with React + Groq + Vercel</strong></p>
   
-  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/aashumalik784/your-repo)
-  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-  ![Powered by](https://img.shields.io/badge/Powered%20by-Groq-orange)
+  [[Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/aashumalik784/chatgpt-ai)
+  [License](https://img.shields.io/badge/license-MIT-blue.svg)
+  [Powered by](https://img.shields.io/badge/Powered%20by-Groq-orange)
 </div>
 
 ---
 
 ## 🚀 Live Demo
-**Website:** [https://your-app.vercel.app](https://your-app.vercel.app) 
+**Website:** [https://chatgpt-ai-aashu.vercel.app](https://chatgpt-ai-aashu.vercel.app) 
 
-**Status:** ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=your-app-name) 
+**Status:** [Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=chatgpt-ai-aashu) 
 
 ---
 
 ## 👨‍💻 About Me
 <div align="center">
-  <img src="https://github.com/aashumalik784.png" alt="Aashu Malik" width="150" style="border-radius: 50%;">
+  <img src="./aashu-profile.jpg" alt="Aashu Malik" width="150" style="border-radius: 50%;">
   <h3>Aashu Malik</h3>
   <p>Full Stack Developer | Content Creator | AI Enthusiast</p>
 </div>
@@ -71,15 +71,17 @@
 
 ### 1. Clone Repository
 ```bash
-
-git clone https://github.com/aashumalik784/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/aashumalik784/chatgpt-ai.git
+cd chatgpt-ai
 
 npm install
 
 GROQ_API_KEY=gsk_your_groq_api_key_here
 
 npm run dev
+
+npm i -g vercel
+vercel
 
 ├── api/
 │   └── chat.js          # Groq API handler
@@ -93,18 +95,25 @@ npm run dev
 │   └── main.jsx         # Entry point
 └── index.html           # HTML template
 
-npm i -g vercel
+MIT License
 
-vercel
+Copyright (c) 2026 Aashu Malik
 
----
-<div align="center">
-  <img src="./aashu-profile.jpg" alt="Aashu Malik" width="120" style="border-radius: 50%; border: 3px solid #007bff;">
-  
----
-## 👨‍💻 About Me
-<div align="center">
-  <img src="./aashu-profile.jpg" alt="Aashu Malik" width="150" style="border-radius: 50%;">
-  <h3>Aashu Malik</h3>
-  <p>Full Stack Developer | Content Creator | AI Enthusiast</p>
-</div>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
