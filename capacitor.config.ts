@@ -1,6 +1,4 @@
-import { CapacitorConfig } from '@capacitor/cli';
-
-const config: CapacitorConfig = {
+const config = {
   appId: 'io.wasmer.gpt',
   appName: 'Wasmer GPT',
   webDir: 'dist',
