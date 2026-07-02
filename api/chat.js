@@ -9,12 +9,12 @@ export default async function handler(req, res) {
 
   try {
     const { message } = req.body;
-    const apiKey = process.env.GROQ_API_KEY; // ✅ GROQ ki key
+    const apiKey = process.env.GROQ_API_KEY;
 
     if (!apiKey) return res.status(500).json({ error: 'GROQ_API_KEY set nahi hai Vercel me' });
     if (!message) return res.status(400).json({ error: 'Message khali hai' });
 
-    // ✅ Groq API call
+    // ✅ Groq API call with system prompt
     const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: { 
@@ -22,9 +22,12 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant', // Free + Super fast model
+        model: 'llama-3.1-8b-instant',
         messages: [
-          { role: 'system', content: 'You are a helpful AI assistant. Reply in Hinglish.' },
+          { 
+            role: 'system', 
+            content: 'You are Wasmer GPT. Always reply in Hinglish using Hindi + English mix. Be friendly and helpful. If you dont know latest info after April 2024, say "Mera data April 2024 tak ka hai bhai, iske liye latest search karna padega". Today is 2 July 2026.' 
+          },
           { role: 'user', content: message }
         ],
         temperature: 0.7,
